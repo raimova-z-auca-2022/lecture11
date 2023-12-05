@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/premium-photo/air-bubbles-under-water-nature-background_476363-807.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            flex: 1;
+            max-width: 100px;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            background-color: #3498db;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .content-block {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            background-color: #3498db;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            color: #fff;
+        }
+
+        .block-image {
+            flex: 1;
+            max-width: 50%;
+            overflow: hidden;
+        }
+
+        .block-image img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .block-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .block-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reveal-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px auto;
+            display: block;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-button:hover {
+            background-color: #2980b9;
+        }
+
+        #phone-number {
+            display: none;
+            font-size: 18px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .header-text {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* Burger menu styles */
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 10px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+        }
+
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .burger-menu:hover .bar {
+            background-color: #ecf0f1;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .burger-menu {
+                display: block;
+            }
+
+            .content-section {
+                margin-top: 50px;
+            }
+
+            .menu-vertical {
+                flex-direction: column; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="https://papik.pro/uploads/posts/2022-01/1643605452_1-papik-pro-p-logotip-turagentstva-1.png" alt="Logo">
+        </div>
+        <button class="burger-menu" onclick="toggleMenu()">
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </button>
+        <div class="menu">
+            <a href="#">Дубай</a>
+            <a href="#">Турция</a>
+        </div>
+    </div>
+    <section class="content-section">
+        <div class="content-block">
+            <div class="block-image">
+                <img src="https://all.accor.com/magazine/imagerie/1-34bc.jpg" alt="Image 1">
+            </div>
+            <div class="block-text">
+                <h2>Туры в Дубай</h2>
+                <p>Отправьтесь в волшебное приключение в Дубаи и погрузитесь в мир роскоши, сказочных пляжей и захватывающих развлечений с нашими незабываемыми турами!</p>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="block-text">
+                <h2>Туры в Турцию</h2>
+                <p>Откройте для себя великолепие Турции с нашими турами: невероятные пляжи, богатая история и гостеприимство ждут вас!</p>
+            </div>
+            <div class="block-image">
+                <img src="https://cdn2.tu-tu.ru/image/pagetree_node_data/1/fac38b6a06dbfcf1714dc55450bb721d/" alt="Image 2">
+            </div>
+        </div>
+        <!-- Add more alternating content blocks as needed -->
+    </section>
+    <button class="reveal-button" onclick="revealPhoneNumber()">Для подробной информации</button>
+    <p id="phone-number">Phone Number: +996 221 15 15 24</p>
+    <div class="footer">
+        &copy; 2023 Bs Travel Company
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector(".menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        function toggleSubMenu() {
+            var subMenu = document.querySelector(".sub-menu");
+            subMenu.style.display = (subMenu.style.display === "block") ? "none" : "block";
+        }
+
+        function revealPhoneNumber() {
+            var phoneNumber = document.getElementById("phone-number");
+            phoneNumber.style.display = "block";
+        }
+    </script>
+</body>
+</html>
